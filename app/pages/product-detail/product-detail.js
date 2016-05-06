@@ -1,11 +1,6 @@
-import {Page, NavController, NavParams} from 'ionic-angular';
+import {Page, NavController, NavParams, Modal} from 'ionic-angular';
+import {ImageDetailPage} from '../image-detail/image-detail';
 
-/*
-  Generated class for the ProductDetailPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Page({
   templateUrl: 'build/pages/product-detail/product-detail.html',
 })
@@ -23,5 +18,12 @@ export class ProductDetailPage {
   redirect() {
     console.log("this.product.url", this.product.url);
     window.open(this.product.url, '_system', 'location=yes');
+  }
+
+  showImageDetail(index) {
+    console.log("index", index);
+    console.log("Modal", Modal);
+    let modal = Modal.create(ImageDetailPage, {product: this.product, index: index});
+    this.nav.present(modal);
   }
 }

@@ -10,14 +10,13 @@
 
 <ion-content padding class="product-detail">
 
-  <img src="{{ product.images[0]['productDetail-thumbnail-full'] }}" />
+  <img src="{{ product.images[0]['productDetail-thumbnail-full'] }}" (click)="showImageDetail(0)">
 
   <scroll-content>
     <ion-scroll scrollX="true"  class="item">
         <ion-row>
-
-            <ion-col width-33 *ngFor="#image of product.images">
-                <img src="{{ image['productDetail-thumbnail'] }}" />
+            <ion-col width-33 *ngFor="#image of product.images; #i = index">
+                <img src="{{ image['productDetail-thumbnail'] }}" (click)="showImageDetail(i)">
             </ion-col>
         </ion-row>
     </ion-scroll>
