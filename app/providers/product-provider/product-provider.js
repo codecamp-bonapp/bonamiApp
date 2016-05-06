@@ -94,7 +94,7 @@ export class ProductProvider {
                 "shippingPriceCurrency": "CZK",
                 "stockType": "available",
                 "stockInfoText": "U vás doma 7. – 10. 6. 2016",
-                "stockWarningText": "Posledních pár kusů",
+                "stockWarningText": "",
                 "campaignEndAt": "2016-08-28T23:59:59+0000",
                 "url": "https://www.bonami.cz/p/sada-dvou-neviditelny-polic-udb",
                 "properties": [
