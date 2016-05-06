@@ -9,7 +9,7 @@
 
 <ion-content>
 
-  <ion-card *ngFor="#campaign of campaigns">
+  <ion-card *ngFor="#campaign of campaigns" (click)="showCampaign(campaign.niceURL)">
 
     <img src='{{ campaign.images.author }}'>
 
