@@ -4,7 +4,7 @@ import {CampaignDetailPage} from '../campaign-detail/campaign-detail';
 
 @Page({
   templateUrl: 'build/pages/campaigns-list/campaigns-list.html',
-  providers: [CampaignsProvider]
+  providers: [CampaignsProvider],
 })
 export class CampaignsListPage {
   static get parameters() {
@@ -15,10 +15,8 @@ export class CampaignsListPage {
     this.nav = nav;
     this.CampaignsProvider = CampaignsProvider;
 
-    // LIMIT - limit of results returned from api
-    this.limit = 10;
-    // link to next list of campaigns
-    this.next = "";
+    this.limit = 10; // LIMIT - limit of results returned from api
+    this.next = ""; // link to next list of campaigns
     this.page = 1;
 
     // get campaigns list from api
