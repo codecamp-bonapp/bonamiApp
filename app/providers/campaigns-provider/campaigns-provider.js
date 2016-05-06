@@ -3,17 +3,17 @@ import {Http} from 'angular2/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class CampaignsListProvider {
+export class CampaignsProvider {
   static get parameters(){
     return [[Http]]
-  }  
+  }
 
   constructor(http) {
     this.http = http;
     this.data = null;
   }
 
-  load(page, limit, link) {
+  loadCampaingList(page, limit, link) {
 
     // provisional promise insted API call
     return new Promise(resolve => {

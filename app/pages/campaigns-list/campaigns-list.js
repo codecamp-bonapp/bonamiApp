@@ -1,14 +1,14 @@
 import {Page, NavController} from 'ionic-angular';
-import {CampaignsListProvider} from '../../providers/campaigns-list-provider/campaigns-list-provider';
+import {CampaignsProvider} from '../../providers/campaigns-provider/campaigns-provider';
 import {CampaignDetailPage} from '../campaign-detail/campaign-detail';
 
 @Page({
   templateUrl: 'build/pages/campaigns-list/campaigns-list.html',
-  providers: [CampaignsListProvider]
+  providers: [CampaignsProvider]
 })
 export class CampaignsListPage {
   static get parameters() {
-    return [[NavController], [CampaignsListProvider]];
+    return [[NavController], [CampaignsProvider]];
   }
 
   constructor(nav, CampaignsProvider) {
@@ -22,7 +22,7 @@ export class CampaignsListPage {
     this.page = 1;
 
     // get campaigns list from api
-    var promise = this.CampaignsProvider.load(this.page, this.limit, this.next);
+    var promise = this.CampaignsProvider.loadCampaingList(this.page, this.limit, this.next);
     promise.then((data) => {
       this.campaigns = data.campaigns;
       this.links = data.links;
