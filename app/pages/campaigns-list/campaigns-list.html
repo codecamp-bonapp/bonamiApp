@@ -1,0 +1,27 @@
+
+<ion-navbar *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Denní inspirace</ion-title>
+</ion-navbar>
+
+
+<ion-content>
+
+  <ion-card *ngFor="#campaign of campaigns">
+
+    <img src='{{ campaign.images.author }}'>
+
+    <ion-card-content>
+      <ion-card-title>
+        {{ campaign.name }}
+      </ion-card-title>
+      <p>
+        {{ campaign.perex }}
+      </p>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
