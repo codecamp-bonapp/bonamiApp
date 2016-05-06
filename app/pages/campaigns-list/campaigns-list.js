@@ -27,7 +27,7 @@ export class CampaignsListPage {
     });
   }
 
-  showCampaign(niceUrl){
-    this.nav.push(CampaignDetailPage, {niceUrl : niceUrl});
+  showCampaign(campaign){
+    this.nav.push(CampaignDetailPage, {campaign : campaign});
   }
 }

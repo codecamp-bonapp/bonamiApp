@@ -1,18 +1,20 @@
 <ion-navbar *navbar>
-  <ion-title>campaignDetail</ion-title>
+  <ion-title>{{ campaign.name }}</ion-title>
 </ion-navbar>
 
-<ion-content>
+<ion-content padding class="campaign-detail">
 
-  <ion-card *ngFor="#product of products" (click)="showProduct(product.niceURL)">
+  <ion-card *ngFor="#product of products">
 
-    <img src="{{ product.images[0]['productDetail-thumbnail-full'] }}">
+    <div (click)="showProduct(product)">
+      <img src="{{ product.images[0]['productDetail-thumbnail-full'] }}">
 
-    <ion-card-content>
-      <ion-card-title>
-        {{ product.name }}
-      </ion-card-title>
-    </ion-card-content>
+      <ion-card-content>
+        <ion-card-title>
+          {{ product.name }}
+        </ion-card-title>
+      </ion-card-content>
+    </div>
 
     <ion-row>
       <ion-col width-70>

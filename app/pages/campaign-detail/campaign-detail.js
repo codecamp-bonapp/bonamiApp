@@ -1,5 +1,6 @@
 import {Page, NavController, NavParams} from 'ionic-angular';
 import {ProductProvider} from '../../providers/product-provider/product-provider';
+import {ProductDetailPage} from '../product-detail/product-detail';
 
 @Page({
   templateUrl: 'build/pages/campaign-detail/campaign-detail.html',
@@ -13,23 +14,21 @@ export class CampaignDetailPage {
   constructor(nav, params, ProductProvider) {
     this.nav = nav;
     this.params = params;
-    this.niceUrl = this.params.get("niceUrl");
+    this.campaign = this.params.get("campaign");
     this.ProductProvider = ProductProvider;
 
     this.limit = 10; // limit of results returned from api
     this.next = ""; // link to next list of product
 
     // get product list from api
-    var promise = this.ProductProvider.loadProducts(this.niceUrl, this.limit, this.next);
+    var promise = this.ProductProvider.loadProducts(this.campaign.niceUrl, this.limit, this.next);
     promise.then((data) => {
-      console.log("data", data);
       this.products = data.products;
       this.links = data.links;
     });
   }
 
-  showProduct(niceUrl){
-    console.log("niceUrl", niceUrl);
-    // this.nav.push(CampaignDetailPage, {niceUrl : niceUrl});
+  showProduct(product){
+    this.nav.push(ProductDetailPage, {product : product});
   }
 }

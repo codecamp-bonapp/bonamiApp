@@ -70,9 +70,29 @@ export class ProductProvider {
                         "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg"
                     },
                     {
+                        "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg"
+                    },
+                    {
                         "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
                         "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
                         "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg"
+                    },
+                    {
+                        "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg"
+                    },
+                    {
+                        "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
+                        "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
+                        "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg"
+                    },
+                    {
+                        "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg"
                     },
                     {
                         "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
@@ -121,14 +141,29 @@ export class ProductProvider {
                 ],
                 "images": [
                     {
-                        "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
-                        "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
-                        "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg"
+                        "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg"
                     },
                     {
                         "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
                         "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
                         "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg"
+                    },
+                    {
+                        "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg"
+                    },
+                    {
+                        "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
+                        "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
+                        "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg"
+                    },
+                    {
+                        "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg"
                     },
                     {
                         "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
@@ -182,9 +217,29 @@ export class ProductProvider {
                         "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg"
                     },
                     {
+                        "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg"
+                    },
+                    {
                         "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
                         "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
                         "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg"
+                    },
+                    {
+                        "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg"
+                    },
+                    {
+                        "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
+                        "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
+                        "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg"
+                    },
+                    {
+                        "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg"
                     },
                     {
                         "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
@@ -238,9 +293,29 @@ export class ProductProvider {
                         "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg"
                     },
                     {
+                        "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg"
+                    },
+                    {
                         "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
                         "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
                         "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg"
+                    },
+                    {
+                        "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg"
+                    },
+                    {
+                        "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
+                        "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
+                        "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg"
+                    },
+                    {
+                        "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-retina": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg",
+                        "productDetail-thumbnail-full": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18900-smaltovane-hrnky-tinman.jpeg"
                     },
                     {
                         "productDetail-thumbnail": "https://1.bonami.cz/images/campaigns/homepage_screen/campaign-18926-claude-monet-reprodukce-obrazu.jpeg",
