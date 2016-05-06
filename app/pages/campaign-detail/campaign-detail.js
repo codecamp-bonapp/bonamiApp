@@ -23,8 +23,13 @@ export class CampaignDetailPage {
     var promise = this.ProductProvider.loadProducts(this.niceUrl, this.limit, this.next);
     promise.then((data) => {
       console.log("data", data);
-      this.product = data.product;
+      this.products = data.products;
       this.links = data.links;
     });
+  }
+
+  showProduct(niceUrl){
+    console.log("niceUrl", niceUrl);
+    // this.nav.push(CampaignDetailPage, {niceUrl : niceUrl});
   }
 }

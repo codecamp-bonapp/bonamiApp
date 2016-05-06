@@ -2,6 +2,38 @@
   <ion-title>campaignDetail</ion-title>
 </ion-navbar>
 
-<ion-content padding class="campaign-detail">
-  <h1>{{niceUrl}}</h1>
+<ion-content>
+
+  <ion-card *ngFor="#product of products" (click)="showProduct(product.niceURL)">
+
+    <img src="{{ product.images[0]['productDetail-thumbnail-full'] }}">
+
+    <ion-card-content>
+      <ion-card-title>
+        {{ product.name }}
+      </ion-card-title>
+      <ion-card-title>
+        {{ product.stockInfoText }}
+      </ion-card-title>
+      <ion-card-title>
+        {{ product.stockWarningText }}
+      </ion-card-title>
+    </ion-card-content>
+
+    <ion-item>
+      <button primary clear item-left>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>12 Likes</div>
+      </button>
+      <button primary clear item-left>
+        <ion-icon name="text"></ion-icon>
+        <div>4 Comments</div>
+      </button>
+      <ion-note item-right>
+        11h ago
+      </ion-note>
+    </ion-item>
+
+  </ion-card>
+
 </ion-content>

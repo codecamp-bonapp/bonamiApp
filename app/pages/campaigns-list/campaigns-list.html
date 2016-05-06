@@ -11,7 +11,7 @@
 
   <ion-card *ngFor="#campaign of campaigns" (click)="showCampaign(campaign.niceURL)">
 
-    <img src='{{ campaign.images.author }}'>
+    <img src='{{ campaign.images["homepage-main"] }}'>
 
     <ion-card-content>
       <ion-card-title>
