@@ -1,11 +1,13 @@
 .campaigns-list {
 
 	.loader {
+		background-image: url('../../images/loader.png');
+		background-size: 60px 60px;
 		position: relative;
 		top: 50%;
 		left: 50%;
-		width: 32px;
-		height: 32px;
+		width: 60px;
+		height: 60px;
 		-webkit-animation: spin 1.2s linear infinite;
 		-moz-animation: spin 1.2s linear infinite;
 		animation: spin 1.2s linear infinite;
