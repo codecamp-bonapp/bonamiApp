@@ -1,3 +1,24 @@
 .campaign-detail {
+  .button-medium{
+    font-size: 0.9em;
+    height: 2.3em;
+    padding: 0 0.8em;
+    margin: 0;
+  }
 
+  .product-warning {
+    color: red;
+    font-weight: bold;
+
+  }
+
+  .product-info {
+    color: rgb(39,218, 76);
+    font-weight: bold;
+  }
+
+  ion-card-title {
+    font-size: 1.2em;
+    padding: 0;
+  }
 }
