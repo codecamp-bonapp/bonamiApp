@@ -6,15 +6,13 @@
 
   <img src="{{ product.images[0]['productDetail-thumbnail-full'] }}" (click)="showImageDetail(0)">
 
-  <scroll-content class="imageSlider">
-    <ion-scroll scrollX="true"  class="item">
+    <ion-scroll scrollX="true"  class="item imageSlider">
         <ion-row>
             <ion-col width-33 *ngFor="#image of product.images; #i = index" class="img-{{i}}">
                 <img src="{{ image['productDetail-thumbnail'] }}" (click)="showImageDetail(i)">
             </ion-col>
         </ion-row>
     </ion-scroll>
-  </scroll-content>
 
   <h1>
     {{ product.name }}

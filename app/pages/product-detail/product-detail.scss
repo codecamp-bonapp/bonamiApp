@@ -1,8 +1,4 @@
 .product-detail {
-	scroll-content{
-		position: relative;
-		padding: 0;
-	}
 
 	.imageSlider {
 		padding: 0;
@@ -10,10 +6,7 @@
 
 		scroll-content{
 			padding: 0;
-		}
-
-		.item {
-			padding-left: 0;
+			position: relative;
 		}
 
 		ion-row {
