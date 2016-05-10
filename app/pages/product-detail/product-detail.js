@@ -16,7 +16,6 @@ export class ProductDetailPage {
   }
 
   redirect() {
-    console.log("this.product.url", this.product.url);
     window.open(this.product.url, '_system', 'location=yes');
   }
 
