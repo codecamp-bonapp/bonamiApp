@@ -16,23 +16,20 @@
       </ion-card-content>
     </div>
 
-    <ion-row>
-      <ion-col width-70>
-        <p>
+    <ion-list>
+      <ion-item>
+        <p class="product-info">
           {{ product.stockInfoText }}
         </p>
-        <p *ngIf="product.stockWarningText != ''">
+        <p *ngIf="product.stockWarningText != ''" class="product-warning">
           {{ product.stockWarningText }}
         </p>
-      </ion-col>
-      <ion-col width-30>
-        <button secondary (click)="redirect(product.url)">
-          {{ product.price }}
-          <ion-icon name="cart"></ion-icon>
-        </button>
-      </ion-col>
-    </ion-row>
-
+          <button item-right secondary (click)="redirect(product.url)" class="button-medium">
+            {{ product.price }} Kč
+            <ion-icon name="cart"></ion-icon>
+          </button>
+      </ion-item>
+    </ion-list>
 
   </ion-card>
 
