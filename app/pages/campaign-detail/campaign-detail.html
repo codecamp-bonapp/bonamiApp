@@ -2,7 +2,7 @@
   <ion-title>{{ campaign.name }}</ion-title>
 </ion-navbar>
 
-<ion-content padding class="campaign-detail">
+<ion-content class="campaign-detail">
 
   <ion-card *ngFor="#product of products">
 
@@ -26,12 +26,10 @@
         </p>
       </ion-col>
       <ion-col width-30>
-        <a href="{{product.url}}">
-          <button secondary>
-            {{ product.price }}
-            <ion-icon name="cart"></ion-icon>
-          </button>
-        </a>
+        <button secondary (click)="redirect(product.url)">
+          {{ product.price }}
+          <ion-icon name="cart"></ion-icon>
+        </button>
       </ion-col>
     </ion-row>
 

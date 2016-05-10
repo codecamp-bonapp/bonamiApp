@@ -31,4 +31,8 @@ export class CampaignDetailPage {
   showProduct(product){
     this.nav.push(ProductDetailPage, {product : product});
   }
+
+  redirect(url) {
+    window.open(url, '_system', 'location=yes');
+  }
 }
