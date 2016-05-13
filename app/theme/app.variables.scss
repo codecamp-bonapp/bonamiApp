@@ -36,6 +36,8 @@ $colors: (
 
 // bonami colors
 $emerald: #37cd62;
+$text-90-black: #1a1a1a;
+$text-80-black: #4a4a4a;
 
 // Bonami fonts
 $fontFamilyBonamiNormal: "bnmType500", "Helvetica Neue", sans-serif;
@@ -47,6 +49,7 @@ $font-family-base: $fontFamilyBonamiNormal;
 $font-family-md-base: $fontFamilyBonamiNormal;
 $font-family-ios-base: $fontFamilyBonamiNormal;
 $font-family-wp-base: $fontFamilyBonamiNormal;
+$text-color: $text-80-black;
 
 // Navbar background + border override
 $toolbar-background: #ffffff;
