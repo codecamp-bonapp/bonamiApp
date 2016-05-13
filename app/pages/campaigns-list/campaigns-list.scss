@@ -1,3 +1,14 @@
+.campaigns-list-page {
+	.toolbar-title {
+		height: 70%;
+		img {
+			height: 100%;
+			max-height: 3rem;
+			max-width: 14rem;
+		}
+	}
+}
+
 .campaigns-list {
 
 	.loader {

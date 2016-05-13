@@ -1,15 +1,17 @@
 
 <ion-navbar *navbar>
-  <button menuToggle>
-    <ion-icon name="menu"></ion-icon>
-  </button>
-  <ion-title>Denní inspirace</ion-title>
+  <!--<button menuToggle>-->
+    <!--<ion-icon name="menu"></ion-icon>-->
+  <!--</button>-->
+  <ion-title>
+    <img src="images/bonami-logo.svg" alt="Logo">
+  </ion-title>
 </ion-navbar>
 
 
 <ion-content class="campaigns-list">
 
-  <div class="loader"></div>
+  <!--<div class="loader"></div>-->
 
   <ion-card *ngFor="#campaign of campaigns" (click)="showCampaign(campaign)">
 
