@@ -25,7 +25,7 @@
           {{ product.stockWarningText }}
         </p>
           <button item-right secondary (click)="redirect(product.url)" class="button-medium">
-            {{ product.price }} Kč
+            {{ product.priceInfo.price }} Kč
             <ion-icon name="cart"></ion-icon>
           </button>
       </ion-item>

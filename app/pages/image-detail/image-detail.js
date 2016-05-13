@@ -13,11 +13,10 @@ export class ImageDetailPage {
     this.params = params;
     this.index = this.params.get('index');
     this.product = this.params.get('product');
-    console.log("params", params);
+
     this.slideOptions = {
       initialSlide: this.index
     }
-
   }
 
   closeModal(){
