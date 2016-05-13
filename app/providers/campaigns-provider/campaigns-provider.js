@@ -1,5 +1,5 @@
 import {Injectable} from 'angular2/core';
-import {Http} from 'angular2/http';
+import {Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -25,12 +25,16 @@ export class CampaignsProvider {
 
     // don't have the data yet
     return new Promise(resolve => {
-      this.http.get(baseUrl)
+      // Add accept-language header - bonami doesn't respond to en-US
+      var h = new Headers();
+      h.append('accept-language', 'cs'); //TODO check if phone is in sk
+      console.log('headers', h);
+      this.http.get(baseUrl, {headers: h})
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
           resolve(this.data);
-        });
+        },err => console.log('error!', err));
     });
   }
 }
