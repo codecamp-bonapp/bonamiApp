@@ -19,18 +19,49 @@
   </h1>
 
   <h2>
-    {{ product.brandName }}
+    od <span>{{ product.brandName }}</span>
   </h2>
 
   <ion-list>
     <ion-item>
-      {{ product.price }}
-      {{ product.url }}
-      <button secondary item-right (click)="redirect()">
-        TODO
-      </button>
+        <p class="price">
+            {{ product.priceInfo.price | money }} Kč
+        </p>
+        <p *ngIf="product.priceInfo.retailPrice != ''" class="retailPrice">
+            {{ product.priceInfo.retailPrice | money }} Kč
+        </p>
+        <button item-right (click)="redirect()" class="buttonMedium">
+            PŘIDAT DO KOŠÍKU
+        </button>
     </ion-item>
+
+      <ion-item class="stockInfo">
+          <ion-icon name="cube"></ion-icon>
+          <span>
+              {{ product.stockInfo.stockInfoText }}
+          </span>
+      </ion-item>
+
+      <ion-item *ngIf="product.stockInfo.stockWarningText" class="stockWarning">
+              {{ product.stockInfo.stockWarningText }}
+      </ion-item>
   </ion-list>
 
+    <p>
+        {{ product.description }}
+    </p>
+
+    <ion-list>
+        <ion-item *ngFor="#item of product.properties">
+            <div class="prop">
+                <span class="propName">
+                    {{item.name}}
+                </span>
+                <span class="propValue">
+                    {{item.value}}
+                </span>
+            </div>
+        </ion-item>
+    </ion-list>
 
 </ion-content>
