@@ -18,14 +18,14 @@
 
     <ion-list>
       <ion-item>
-        <p class="product-info">
-          {{ product.stockInfoText }}
+        <p *ngIf="product.stockInfo.stockWarningText" class="product-warning">
+          {{ product.stockInfo.stockWarningText }}
         </p>
-        <p *ngIf="product.stockWarningText != ''" class="product-warning">
-          {{ product.stockWarningText }}
+        <p *ngIf="!product.stockWarningText" class="retailPrice" >
+          {{ product.priceInfo.retailPrice | money }} Kč
         </p>
-          <button item-right secondary (click)="redirect(product.url)" class="button-medium">
-            {{ product.priceInfo.price }} Kč
+          <button item-right (click)="redirect(product.url)" class="button-medium">
+            {{ product.priceInfo.price | money }} Kč
             <ion-icon name="cart"></ion-icon>
           </button>
       </ion-item>

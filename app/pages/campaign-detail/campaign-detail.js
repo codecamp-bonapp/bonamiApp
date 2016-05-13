@@ -1,10 +1,12 @@
 import {Page, NavController, NavParams} from 'ionic-angular';
 import {ProductProvider} from '../../providers/product-provider/product-provider';
 import {ProductDetailPage} from '../product-detail/product-detail';
+import {Money} from '../../pipes/price-pipe';
 
 @Page({
   templateUrl: 'build/pages/campaign-detail/campaign-detail.html',
   providers: [ProductProvider],
+  pipes: [Money]
 })
 export class CampaignDetailPage {
   static get parameters() {

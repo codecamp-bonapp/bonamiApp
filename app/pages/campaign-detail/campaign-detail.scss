@@ -4,12 +4,12 @@
     height: 2.3em;
     padding: 0 0.8em;
     margin: 0;
+    background: $emerald;
   }
 
   .product-warning {
     color: red;
     font-weight: bold;
-
   }
 
   .product-info {
@@ -20,5 +20,11 @@
   ion-card-title {
     font-size: 1.2em;
     padding: 0;
+  }
+
+  .retailPrice {
+    color: gray;
+    text-decoration: line-through;
+    font-size: 0.8em;
   }
 }
