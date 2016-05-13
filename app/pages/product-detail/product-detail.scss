@@ -18,4 +18,63 @@
 			margin-left: -5px;
 		}
 	}
+
+	h1 {
+		font-size: 1.1em;
+	}
+
+	h2 {
+		color: gray;
+		font-size: 1em;
+	}
+
+	h2 span {
+		text-decoration: underline;
+	}
+
+	.buttonMedium {
+		font-size: 0.9em;
+		height: 2.9em;
+		padding: 0 0.8em;
+		margin: 0;
+		background: $emerald;
+	}
+
+	.price {
+		color: $emerald;
+		font-weight: bold;
+		font-size: 115%;
+	}
+	
+	.retailPrice {
+		color: gray;
+		text-decoration: line-through;
+		font-size: 105%;
+	}
+
+	.item {
+		padding-left: 0px;
+	}
+
+	ion-list ion-label{
+		padding-left: 5px;
+	}
+
+	.stockInfo span {
+		font-size: 0.8em;
+	}
+
+	.prop {
+		font-size: 0.8em;
+	}
+
+	.propName {
+		float: left;
+	}
+
+	.propValue {
+		float: right;
+		max-width: 50%;
+		white-space: normal;
+	}
 }
