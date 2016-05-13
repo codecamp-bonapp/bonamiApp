@@ -22,8 +22,8 @@ export class CampaignsListPage {
     // get campaigns list from api
     var promise = this.CampaignsProvider.loadCampaingList(this.page, this.limit, this.next);
     promise.then((data) => {
-      this.campaigns = data.campaigns;
-      this.links = data.links;
+      this.campaigns = data;
+      this.links = [];
     });
   }
 

@@ -23,8 +23,8 @@ export class CampaignDetailPage {
     // get product list from api
     var promise = this.ProductProvider.loadProducts(this.campaign.niceUrl, this.limit, this.next);
     promise.then((data) => {
-      this.products = data.products;
-      this.links = data.links;
+      this.products = data;
+      this.links = [];
     });
   }
 
@@ -32,6 +32,7 @@ export class CampaignDetailPage {
     this.nav.push(ProductDetailPage, {product : product});
   }
 
+  // redirect to an external web (bonami.cz)
   redirect(url) {
     window.open(url, '_system', 'location=yes');
   }

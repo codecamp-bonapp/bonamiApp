@@ -15,13 +15,13 @@ export class ProductDetailPage {
     this.product = this.params.get("product");
   }
 
+  // redirect to an external web (bonami.cz)
   redirect() {
     window.open(this.product.url, '_system', 'location=yes');
   }
 
+  // open image slider
   showImageDetail(index) {
-    console.log("index", index);
-    console.log("Modal", Modal);
     let modal = Modal.create(ImageDetailPage, {product: this.product, index: index});
     this.nav.present(modal);
   }
