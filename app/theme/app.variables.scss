@@ -33,3 +33,18 @@ $colors: (
   dark:       #222,
   favorite:   #69BB7B
 );
+
+// Bonami fonts
+$fontFamilyBonamiNormal: "bnmType500", "Helvetica Neue", sans-serif;
+$fontFamilyBonamiBold: "bnmType700", "Helvetica Neue", sans-serif;
+$fontFamilyBonamiLight: "bnmType300", "Helvetica Neue", sans-serif;
+
+// Ionic fonts override
+$font-family-base: $fontFamilyBonamiNormal;
+$font-family-md-base: $fontFamilyBonamiNormal;
+$font-family-ios-base: $fontFamilyBonamiNormal;
+$font-family-wp-base: $fontFamilyBonamiNormal;
+
+// Navbar background + border override
+$toolbar-background: #ffffff;
+$toolbar-border-color: #ededed;
