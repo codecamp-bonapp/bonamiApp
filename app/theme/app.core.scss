@@ -15,36 +15,36 @@
 
 // Bonami fonts
 @font-face {
-  font-family: 'bnmType300';
-  src: url('../../fonts/bnmType300.eot');
-  src: url('../../fonts/bnmType300.eot') format('embedded-opentype'),
-  url('../../fonts/bnmType300.woff2') format('woff2'),
-  url('../../fonts/bnmType300.woff') format('woff'),
-  url('../../fonts/bnmType300.ttf') format('truetype'),
-  url('../../fonts/bnmType300.svg#bnmType300') format('svg');
+	font-family: 'bnmType300';
+	src: url('../../fonts/bnmType300.eot');
+	src: url('../../fonts/bnmType300.eot') format('embedded-opentype'),
+	url('../../fonts/bnmType300.woff2') format('woff2'),
+	url('../../fonts/bnmType300.woff') format('woff'),
+	url('../../fonts/bnmType300.ttf') format('truetype'),
+	url('../../fonts/bnmType300.svg#bnmType300') format('svg');
 }
 @font-face {
-  font-family: 'bnmType500';
-  src: url('../../fonts/bnmType500.eot');
-  src: url('../../fonts/bnmType500.eot') format('embedded-opentype'),
-  url('../../fonts/bnmType500.woff2') format('woff2'),
-  url('../../fonts/bnmType500.woff') format('woff'),
-  url('../../fonts/bnmType500.ttf') format('truetype'),
-  url('../../fonts/bnmType500.svg#bnmType500') format('svg');
+	font-family: 'bnmType500';
+	src: url('../../fonts/bnmType500.eot');
+	src: url('../../fonts/bnmType500.eot') format('embedded-opentype'),
+	url('../../fonts/bnmType500.woff2') format('woff2'),
+	url('../../fonts/bnmType500.woff') format('woff'),
+	url('../../fonts/bnmType500.ttf') format('truetype'),
+	url('../../fonts/bnmType500.svg#bnmType500') format('svg');
 }
 @font-face {
-  font-family: 'bnmType700';
-  src: url('../../fonts/bnmType700.eot');
-  src: url('../../fonts/bnmType700.eot') format('embedded-opentype'),
-  url('../../fonts/bnmType700.woff2') format('woff2'),
-  url('../../fonts/bnmType700.woff') format('woff'),
-  url('../../fonts/bnmType700.ttf') format('truetype'),
-  url('../../fonts/bnmType700.svg#bnmType500') format('svg');
+	font-family: 'bnmType700';
+	src: url('../../fonts/bnmType700.eot');
+	src: url('../../fonts/bnmType700.eot') format('embedded-opentype'),
+	url('../../fonts/bnmType700.woff2') format('woff2'),
+	url('../../fonts/bnmType700.woff') format('woff'),
+	url('../../fonts/bnmType700.ttf') format('truetype'),
+	url('../../fonts/bnmType700.svg#bnmType500') format('svg');
 }
 
 
 // Navbar bottom border
 .toolbar-background {
-  border-width: 0 0 1px;
-  border-style: solid;
+	border-width: 0 0 1px;
+	border-style: solid;
 }

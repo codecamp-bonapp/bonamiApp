@@ -1,36 +1,32 @@
 <ion-navbar *navbar>
-  <ion-title>{{ campaign.name }}</ion-title>
+	<ion-title>{{ campaign.name }}</ion-title>
 </ion-navbar>
 
 <ion-content class="campaign-detail">
+	<ion-card *ngFor="#product of products">
+		<div (click)="showProduct(product)">
+			<img src="{{ product.images[0]['productDetail-thumbnail-full'] }}">
 
-  <ion-card *ngFor="#product of products">
+			<ion-card-content>
+				<ion-card-title>
+					{{ product.name }}
+				</ion-card-title>
+			</ion-card-content>
+		</div>
 
-    <div (click)="showProduct(product)">
-      <img src="{{ product.images[0]['productDetail-thumbnail-full'] }}">
-
-      <ion-card-content>
-        <ion-card-title>
-          {{ product.name }}
-        </ion-card-title>
-      </ion-card-content>
-    </div>
-
-    <ion-list>
-      <ion-item>
-        <p *ngIf="product.stockInfo.stockWarningText" class="product-warning">
-          {{ product.stockInfo.stockWarningText }}
-        </p>
-        <p *ngIf="!product.stockWarningText" class="retailPrice" >
-          {{ product.priceInfo.retailPrice | money }} Kč
-        </p>
-          <button item-right (click)="redirect(product.url)" class="button-medium">
-            {{ product.priceInfo.price | money }} Kč
-            <ion-icon name="cart"></ion-icon>
-          </button>
-      </ion-item>
-    </ion-list>
-
-  </ion-card>
-
+		<ion-list>
+			<ion-item>
+				<p *ngIf="product.stockInfo.stockWarningText" class="product-warning">
+					{{ product.stockInfo.stockWarningText }}
+				</p>
+				<p *ngIf="!product.stockWarningText" class="retailPrice" >
+					{{ product.priceInfo.retailPrice | money }} Kč
+				</p>
+				<button item-right (click)="redirect(product.url)" class="button-medium">
+					{{ product.priceInfo.price | money }} Kč
+					<ion-icon name="cart"></ion-icon>
+				</button>
+			</ion-item>
+		</ion-list>
+	</ion-card>
 </ion-content>

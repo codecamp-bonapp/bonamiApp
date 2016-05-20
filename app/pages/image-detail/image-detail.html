@@ -1,11 +1,11 @@
 <ion-navbar *navbar class="hide">
-  <ion-title>{{ product.name }}</ion-title>
+	<ion-title>{{ product.name }}</ion-title>
 </ion-navbar>
 
 <ion-content padding class="image-detail" (click)="closeModal()">
-  <ion-slides pager [options]="slideOptions">
-    <ion-slide *ngFor="#image of product.images">
-      <img src="{{image['productDetail-thumbnail-full']}}" />
-    </ion-slide>
-  </ion-slides>
+	<ion-slides pager [options]="slideOptions">
+		<ion-slide *ngFor="#image of product.images">
+			<img src="{{image['productDetail-thumbnail-full']}}" />
+		</ion-slide>
+	</ion-slides>
 </ion-content>

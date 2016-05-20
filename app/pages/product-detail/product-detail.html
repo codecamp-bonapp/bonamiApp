@@ -1,67 +1,61 @@
 <ion-navbar *navbar>
-  <ion-title>{{ product.name }}</ion-title>
+	<ion-title>{{ product.name }}</ion-title>
 </ion-navbar>
 
 <ion-content padding class="product-detail">
 
-  <img src="{{ product.images[0]['productDetail-thumbnail-full'] }}" (click)="showImageDetail(0)">
+	<img src="{{ product.images[0]['productDetail-thumbnail-full'] }}" (click)="showImageDetail(0)">
 
-    <ion-scroll scrollX="true"  class="item imageSlider">
-        <ion-row>
-            <ion-col width-33 *ngFor="#image of product.images; #i = index" class="img-{{i}}">
-                <img src="{{ image['productDetail-thumbnail'] }}" (click)="showImageDetail(i)">
-            </ion-col>
-        </ion-row>
-    </ion-scroll>
+	<ion-scroll scrollX="true"  class="item imageSlider">
+		<ion-row>
+			<ion-col width-33 *ngFor="#image of product.images; #i = index" class="img-{{i}}">
+				<img src="{{ image['productDetail-thumbnail'] }}" (click)="showImageDetail(i)">
+			</ion-col>
+		</ion-row>
+	</ion-scroll>
 
-  <h1>
-    {{ product.name }}
-  </h1>
+	<h1>{{ product.name }}</h1>
+	<h2>od <span>{{ product.brandName }}</span></h2>
 
-  <h2>
-    od <span>{{ product.brandName }}</span>
-  </h2>
+	<ion-list>
+		<ion-item>
+			<p class="price">
+				{{ product.priceInfo.price | money }} Kč
+			</p>
+			<p *ngIf="product.priceInfo.retailPrice != ''" class="retailPrice">
+				{{ product.priceInfo.retailPrice | money }} Kč
+			</p>
+			<button item-right (click)="redirect()" class="buttonMedium">
+				PŘIDAT DO KOŠÍKU
+			</button>
+		</ion-item>
+		<ion-item class="stockInfo">
+			<ion-icon name="cube"></ion-icon>
+			<span>
+				{{ product.stockInfo.stockInfoText }}
+			</span>
+		</ion-item>
 
-  <ion-list>
-    <ion-item>
-        <p class="price">
-            {{ product.priceInfo.price | money }} Kč
-        </p>
-        <p *ngIf="product.priceInfo.retailPrice != ''" class="retailPrice">
-            {{ product.priceInfo.retailPrice | money }} Kč
-        </p>
-        <button item-right (click)="redirect()" class="buttonMedium">
-            PŘIDAT DO KOŠÍKU
-        </button>
-    </ion-item>
+		<ion-item *ngIf="product.stockInfo.stockWarningText" class="stockWarning">
+			{{ product.stockInfo.stockWarningText }}
+		</ion-item>
+	</ion-list>
 
-      <ion-item class="stockInfo">
-          <ion-icon name="cube"></ion-icon>
-          <span>
-              {{ product.stockInfo.stockInfoText }}
-          </span>
-      </ion-item>
+	<p class="product-detail-description">
+		{{ product.description }}
+	</p>
 
-      <ion-item *ngIf="product.stockInfo.stockWarningText" class="stockWarning">
-              {{ product.stockInfo.stockWarningText }}
-      </ion-item>
-  </ion-list>
-
-    <p class="product-detail-description">
-        {{ product.description }}
-    </p>
-
-    <ion-list>
-        <ion-item *ngFor="#item of product.properties">
-            <div class="prop">
-                <span class="propName">
-                    {{item.name}}
-                </span>
-                <span class="propValue">
-                    {{item.value}}
-                </span>
-            </div>
-        </ion-item>
-    </ion-list>
+	<ion-list>
+		<ion-item *ngFor="#item of product.properties">
+			<div class="prop">
+				<span class="propName">
+					{{item.name}}
+				</span>
+				<span class="propValue">
+					{{item.value}}
+				</span>
+			</div>
+		</ion-item>
+	</ion-list>
 
 </ion-content>

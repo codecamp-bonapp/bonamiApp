@@ -1,31 +1,27 @@
 
 <ion-navbar *navbar>
-  <!--<button menuToggle>-->
-    <!--<ion-icon name="menu"></ion-icon>-->
-  <!--</button>-->
-  <ion-title>
-    <img src="images/bonami-logo.svg" alt="Logo">
-  </ion-title>
+	<!--<button menuToggle>-->
+		<!--<ion-icon name="menu"></ion-icon>-->
+	<!--</button>-->
+	<ion-title>
+		<img src="images/bonami-logo.svg" alt="Logo">
+	</ion-title>
 </ion-navbar>
-
 
 <ion-content class="campaigns-list">
 
-  <!--<div class="loader"></div>-->
+	<!--<div class="loader"></div>-->
 
-  <ion-card *ngFor="#campaign of campaigns" (click)="showCampaign(campaign)">
-
-    <img src='{{ campaign.images["homepage-main"] }}'>
-
-    <ion-card-content>
-      <ion-card-title>
-        {{ campaign.name }}
-      </ion-card-title>
-      <p>
-        {{ campaign.perex }}
-      </p>
-    </ion-card-content>
-
-  </ion-card>
+	<ion-card *ngFor="#campaign of campaigns" (click)="showCampaign(campaign)">
+		<img src='{{ campaign.images["homepage-main"] }}'>
+		<ion-card-content>
+			<ion-card-title>
+				{{ campaign.name }}
+			</ion-card-title>
+			<p>
+				{{ campaign.perex }}
+			</p>
+		</ion-card-content>
+	</ion-card>
 
 </ion-content>
