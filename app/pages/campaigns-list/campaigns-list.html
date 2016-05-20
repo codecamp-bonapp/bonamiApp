@@ -9,9 +9,6 @@
 </ion-navbar>
 
 <ion-content class="campaigns-list">
-
-	<!--<div class="loader"></div>-->
-
 	<ion-card *ngFor="#campaign of campaigns" (click)="showCampaign(campaign)">
 		<img src='{{ campaign.images["homepage-main"] }}'>
 		<ion-card-content>
@@ -24,4 +21,7 @@
 		</ion-card-content>
 	</ion-card>
 
+	<ion-infinite-scroll (infinite)="doInfinite($event)">
+		<ion-infinite-scroll-content loadingSpinner="bonami-loader"></ion-infinite-scroll-content>
+	</ion-infinite-scroll>
 </ion-content>

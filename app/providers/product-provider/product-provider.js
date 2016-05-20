@@ -1,39 +1,51 @@
 import {Injectable} from 'angular2/core';
 import {Http, Headers} from 'angular2/http';
+import * as _ from 'lodash';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ProductProvider {
-	static get parameters(){
-		return [[Http]]
-	}
+	static get parameters() {return [[Http]]}
 
 	constructor(http) {
 		this.http = http;
-		this.data = null;
+		this.data = {};
+		this.next = {};
 	}
 
-	loadProducts(niceUrl, limit, next) {
+	loadProducts(niceUrl) {
 
-		var baseUrl = 'https://www.bonami.cz/mcc16/campaigns/';
-		var URL = baseUrl + niceUrl + '/products';
-
-		if (this.data) {
-			// already loaded data
-			return Promise.resolve(this.data);
+		var getNextProducsUrl = () => {
+			if (this.next[niceUrl]) return this.next[niceUrl];
+			return '/mcc16/campaigns/' + niceUrl + '/products';
 		}
 
-		// don't have the data yet
+		var url = getNextProducsUrl();
+		if (url == 'END') return Promise.resolve({data: this.data[niceUrl], next: this.next[niceUrl]});
+
 		return new Promise(resolve => {
-			// Add accept-language header - bonami doesn't respond to en-US
-			var h = new Headers();
-			h.append('accept-language', 'cs'); //TODO check if phone is in sk
-			this.http.get(URL, {headers: h})
-				.map(res => res.json())
-				.subscribe(data => {
-					this.data = data;
-					resolve(this.data);
-				},err => console.log('error!', err));
+			var headers = new Headers();
+			headers.append('accept-language', 'cs'); // TODO check if phone is in sk
+
+			this.http.get('https://www.bonami.cz' + url, {headers: headers})
+				.subscribe(res => {
+					var newData = res.json();
+					if (_.isEmpty(newData)) {
+						this.next[niceUrl] = 'END';
+						return resolve({data: this.data[niceUrl], next: this.next[niceUrl]});
+					}
+					var oldData = this.data[niceUrl] || [];
+					this.data[niceUrl] = oldData.concat(newData);
+
+					try {
+						var link = JSON.parse(res.headers.get('link'));
+						this.next[niceUrl] = link.href;
+					} catch (err) {
+						this.next[niceUrl] = 'END';
+					}
+
+					resolve({data: this.data[niceUrl], next: this.next[niceUrl]});
+				}, err => console.log('error!', err));
 		});
 	}
 }

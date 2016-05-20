@@ -48,3 +48,21 @@
 	border-width: 0 0 1px;
 	border-style: solid;
 }
+
+
+ion-spinner {
+	background-image: url('../../images/loader.png');
+	background-repeat: no-repeat, no-repeat;
+	background-size: 60px 60px;
+	position: relative;
+	width: 60px;
+	height: 60px;
+	margin: 0px;
+	padding: 0px;
+	-webkit-animation: spin 1.2s linear infinite;
+	-moz-animation: spin 1.2s linear infinite;
+	animation: spin 1.2s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }

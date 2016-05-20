@@ -29,4 +29,8 @@
 			</ion-item>
 		</ion-list>
 	</ion-card>
+
+	<ion-infinite-scroll (infinite)="doInfinite($event)">
+		<ion-infinite-scroll-content loadingSpinner="bonami-loader"></ion-infinite-scroll-content>
+	</ion-infinite-scroll>
 </ion-content>

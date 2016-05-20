@@ -1,33 +1,25 @@
 import {Page, NavController, NavParams} from 'ionic-angular';
-import {ProductProvider} from '../../providers/product-provider/product-provider';
 import {ProductDetailPage} from '../product-detail/product-detail';
 import {Money} from '../../pipes/price-pipe';
 
 @Page({
 	templateUrl: 'build/pages/campaign-detail/campaign-detail.html',
-	providers: [ProductProvider],
 	pipes: [Money]
 })
 export class CampaignDetailPage {
 	static get parameters() {
-		return [[NavController], [NavParams], [ProductProvider]];
+		return [[NavController], [NavParams]];
 	}
 
-	constructor(nav, params, ProductProvider) {
+	constructor(nav, params) {
 		this.nav = nav;
 		this.params = params;
-		this.campaign = this.params.get("campaign");
-		this.ProductProvider = ProductProvider;
-
-		this.limit = 10; // limit of results returned from api
-		this.next = ""; // link to next list of product
+		this.campaign = this.params.get('campaign');
+		this.ProductProvider = this.params.get('ProductProvider');
 
 		// get product list from api
-		var promise = this.ProductProvider.loadProducts(this.campaign.niceUrl, this.limit, this.next);
-		promise.then((data) => {
-			this.products = data;
-			this.links = [];
-		});
+		var promise = this.ProductProvider.loadProducts(this.campaign.niceUrl);
+		promise.then((response) => {this.products = response.data});
 	}
 
 	showProduct(product){
@@ -38,4 +30,17 @@ export class CampaignDetailPage {
 	redirect(url) {
 		window.open(url, '_system', 'location=yes');
 	}
+
+	doInfinite(infiniteScroll) {
+		var promise = this.ProductProvider.loadProducts(this.campaign.niceUrl);
+		promise.then((response) => {
+			this.products = response.data;
+			if (response.next != 'END') {
+				infiniteScroll.complete();
+			} else {
+				infiniteScroll.enable(false);
+			}
+		});
+	}
+
 }

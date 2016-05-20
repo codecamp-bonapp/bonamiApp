@@ -1,40 +1,51 @@
 import {Injectable} from 'angular2/core';
 import {Http, Headers} from 'angular2/http';
+import * as _ from 'lodash';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CampaignsProvider {
-	static get parameters(){
-		return [[Http]]
-	}
+	static get parameters() {return [[Http]]}
 
 	constructor(http) {
 		this.http = http;
 		this.data = null;
+		this.next = null;
 	}
 
-	loadCampaingList(page, limit, link) {
+	loadCampaings() {
 
-		var baseUrl = 'https://www.bonami.cz/mcc16/campaigns';
-		// var URL = baseUrl + '?page=' + page + '&limit=' + limit;
-
-		if (this.data) {
-			// already loaded data
-			return Promise.resolve(this.data);
+		var getNextCampaignsUrl = () => {
+			if (this.next) return this.next;
+			return '/mcc16/campaigns';
 		}
 
-		// don't have the data yet
+		var url = getNextCampaignsUrl();
+		if (url == 'END') return Promise.resolve({data: this.data, next: this.next});;
+
 		return new Promise(resolve => {
-			// Add accept-language header - bonami doesn't respond to en-US
-			var h = new Headers();
-			h.append('accept-language', 'cs'); //TODO check if phone is in sk
-			console.log('headers', h);
-			this.http.get(baseUrl, {headers: h})
-				.map(res => res.json())
-				.subscribe(data => {
-					this.data = data;
-					resolve(this.data);
-				},err => console.log('error!', err));
+			var headers = new Headers();
+			headers.append('accept-language', 'cs'); // TODO check if phone is in sk
+
+			this.http.get('https://www.bonami.cz' + url, {headers: headers})
+				.subscribe(res => {
+					var newData = res.json();
+					if (_.isEmpty(newData)) {
+						this.next = 'END';
+						return resolve({data: this.data, next: this.next});
+					}
+					var oldData = this.data || [];
+					this.data = oldData.concat(newData);
+
+					try {
+						var link = JSON.parse(res.headers.get('link'));
+						this.next = link.href;
+					} catch (err) {
+						this.next = 'END';
+					}
+
+					resolve({data: this.data, next: this.next});
+				}, err => console.log('error!', err));
 		});
 	}
 }
