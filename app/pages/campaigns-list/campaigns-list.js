@@ -27,7 +27,7 @@ export class CampaignsListPage {
 	}
 
 	doInfinite(infiniteScroll) {
-		var promise = this.CampaignsProvider.loadCampaings();
+		var promise = this.CampaignsProvider.loadCampaigns();
 		promise.then((response) => {
 			this.campaigns = response.data;
 			if (response.next != 'END') {
