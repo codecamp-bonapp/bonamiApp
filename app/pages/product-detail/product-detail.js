@@ -21,7 +21,6 @@ export class ProductDetailPage {
 		this.product.campaignEndIn.days = Math.floor(diff / 86400);
 		diff %= 86400;
 		this.product.campaignEndIn.hours = Math.floor(diff / 3600);
-		console.log(this.product);
 	}
 
 	// redirect to an external web (bonami.cz)

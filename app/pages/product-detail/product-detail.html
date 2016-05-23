@@ -53,7 +53,7 @@
 		</ion-item>
 	</ion-list>
 
-	<p class="product-detail-description" [innerHTML]="product.description"></p>
+	<p class="product-detail-description">{{ product.description }}</p>
 
 	<ion-list>
 		<ion-item *ngFor="#item of product.properties">
