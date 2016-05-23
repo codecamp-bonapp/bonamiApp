@@ -12,6 +12,10 @@
 		font-weight: bold;
 	}
 
+	.product-warning:first-letter {
+		text-transform: capitalize;
+	}
+
 	.product-info {
 		color: rgb(39,218, 76);
 		font-weight: bold;

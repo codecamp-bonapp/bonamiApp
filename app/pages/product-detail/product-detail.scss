@@ -84,7 +84,12 @@
 			}
 
 			.text {
+				display: inline-block;
 				line-height: 1.4;
+			}
+
+			.text:first-letter {
+				text-transform: capitalize;
 			}
 		}
 	}
