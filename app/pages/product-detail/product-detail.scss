@@ -34,8 +34,8 @@
 
 	.buttonMedium {
 		font-size: 0.9em;
-		height: 2.9em;
-		padding: 0 0.8em;
+		height: 4em;
+		padding: 0 1em;
 		margin: 0;
 		background: $emerald;
 	}
@@ -43,13 +43,13 @@
 	.price {
 		color: $emerald;
 		font-weight: bold;
-		font-size: 115%;
+		font-size: 1.5em;
 	}
 
 	.retailPrice {
 		color: gray;
 		text-decoration: line-through;
-		font-size: 105%;
+		font-size: 1.05em;
 	}
 
 	.item {
@@ -60,9 +60,35 @@
 		padding-left: 5px;
 	}
 
-	.stockInfo span {
-		font-size: 0.8em;
+	.stock {
+		margin: 0;
+		padding: 0 0 0 1.2em;
+		list-style: none;
+		font-size: 0.9em;
+
+		.stock-warning {
+			color: #ff0000;
+		}
+
+		.stock-success {
+			color: $emerald;
+		}
+
+		li {
+			padding: 0.4em 0;
+
+			ion-icon {
+				width: 1.4em;
+				font-size: 1.5em;
+				float: left;
+			}
+
+			.text {
+				line-height: 1.4;
+			}
+		}
 	}
+
 
 	.prop {
 		font-size: 0.8em;

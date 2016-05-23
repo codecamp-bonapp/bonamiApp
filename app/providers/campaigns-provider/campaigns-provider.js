@@ -13,15 +13,14 @@ export class CampaignsProvider {
 		this.next = null;
 	}
 
-	loadCampaings() {
-
+	loadCampaigns() {
 		var getNextCampaignsUrl = () => {
 			if (this.next) return this.next;
 			return '/mcc16/campaigns';
-		}
+		};
 
 		var url = getNextCampaignsUrl();
-		if (url == 'END') return Promise.resolve({data: this.data, next: this.next});;
+		if (url == 'END') return Promise.resolve({data: this.data, next: this.next});
 
 		return new Promise(resolve => {
 			var headers = new Headers();

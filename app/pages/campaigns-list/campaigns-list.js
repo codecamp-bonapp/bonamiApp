@@ -5,7 +5,7 @@ import {CampaignDetailPage} from '../campaign-detail/campaign-detail';
 
 @Page({
 	templateUrl: 'build/pages/campaigns-list/campaigns-list.html',
-	providers: [CampaignsProvider, ProductProvider],
+	providers: [CampaignsProvider, ProductProvider]
 })
 export class CampaignsListPage {
 	static get parameters() {
@@ -18,7 +18,7 @@ export class CampaignsListPage {
 		this.ProductProvider = ProductProvider;
 
 		// get campaigns list from api
-		var promise = this.CampaignsProvider.loadCampaings();
+		var promise = this.CampaignsProvider.loadCampaigns();
 		promise.then((response) => {this.campaigns = response.data});
 	}
 

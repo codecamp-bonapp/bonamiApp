@@ -29,21 +29,31 @@
 				PŘIDAT DO KOŠÍKU
 			</button>
 		</ion-item>
-		<ion-item class="stockInfo">
-			<ion-icon name="cube"></ion-icon>
-			<span>
-				{{ product.stockInfo.stockInfoText }}
-			</span>
-		</ion-item>
-
-		<ion-item *ngIf="product.stockInfo.stockWarningText" class="stockWarning">
-			{{ product.stockInfo.stockWarningText }}
+		<ion-item>
+			<ul class="stock">
+				<li>
+					<ion-icon name="ios-clock-outline"></ion-icon>
+					<span class="text">
+						prodej končí za <strong>{{ product.campaignEndIn.days }} dní {{ product.campaignEndIn.hours }} hodin</strong>
+					</span>
+				</li>
+				<li>
+					<ion-icon name="cube"></ion-icon>
+					<span class="text">{{ product.stockInfo.stockInfoText }}</span>
+				</li>
+				<li *ngIf="product.stockInfo.stockWarningText" class="stock-warning">
+					<ion-icon name="ios-alert-outline"></ion-icon>
+					<span class="text">{{ product.stockInfo.stockWarningText }}</span>
+				</li>
+				<li *ngIf="product.priceInfo.shippingPrice == null" class="stock-success">
+					<ion-icon name="ios-checkmark-circle-outline"></ion-icon>
+					<span class="text">k tomuto produktu máte <strong>dopravu zdarma!</strong></span>
+				</li>
+            </ul>
 		</ion-item>
 	</ion-list>
 
-	<p class="product-detail-description">
-		{{ product.description }}
-	</p>
+	<p class="product-detail-description" [innerHTML]="product.description"></p>
 
 	<ion-list>
 		<ion-item *ngFor="#item of product.properties">
@@ -57,5 +67,4 @@
 			</div>
 		</ion-item>
 	</ion-list>
-
 </ion-content>

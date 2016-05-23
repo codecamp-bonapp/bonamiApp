@@ -26,7 +26,8 @@
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard",
-    "cordova-plugin-inappbrowser"
+    "cordova-plugin-inappbrowser",
+    "cordova-plugin-globalization"
   ],
   "cordovaPlatforms": [
     "ios",
@@ -34,7 +35,8 @@
       "platform": "ios",
       "version": "",
       "locator": "ios"
-    }
+    },
+    "android"
   ],
   "name": "bonamiapp",
   "description": "bonamiApp: An Ionic project"
