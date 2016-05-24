@@ -1,4 +1,43 @@
 .campaign-detail {
+	.campaign-header {
+		margin: 10px 10px 20px 10px;
+		padding: 10px;
+
+		background: #f0f0f0;
+
+		h1 {
+			text-align: center;
+			color: $lemonday;
+			font-size: 2.5rem;
+			margin: 0 0 10px 0;
+		}
+
+		p {
+			margin: 0 0 20px 0;
+			font-size: 1.1em;
+			line-height: 1.3;
+			text-align: justify;
+		}
+
+		.time-left {
+			display: block;
+			text-align: center;
+			font-size: 0.9em;
+
+			ion-icon {
+				margin-right: 2px;
+				position: relative;
+				top: 1px;
+			}
+		}
+
+		.product-count {
+			display: block;
+			text-align: center;
+			font-size: 0.9em;
+		}
+	}
+
 	.button-medium{
 		font-size: 0.9em;
 		height: 2.3em;
@@ -21,6 +60,10 @@
 		font-weight: bold;
 	}
 
+	ion-card {
+		margin-bottom: 20px;
+	}
+
 	ion-card-title {
 		font-size: 1.2em;
 		padding: 0;
@@ -31,5 +74,4 @@
 		text-decoration: line-through;
 		font-size: 0.8em;
 	}
-
 }

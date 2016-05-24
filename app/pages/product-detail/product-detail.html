@@ -22,19 +22,19 @@
 			<p class="price">
 				{{ product.priceInfo.price | money }} Kč
 			</p>
-			<p *ngIf="product.priceInfo.retailPrice != ''" class="retailPrice">
+			<p *ngIf="product.priceInfo.retailPrice && product.priceInfo.price != product.priceInfo.retailPrice" class="retailPrice">
 				{{ product.priceInfo.retailPrice | money }} Kč
 			</p>
 			<button item-right (click)="redirect()" class="buttonMedium">
-				PŘIDAT DO KOŠÍKU
+				Přidat do košíku
 			</button>
 		</ion-item>
 		<ion-item>
 			<ul class="stock">
-				<li>
+				<li *ngIf="!product.longTermCampaign">
 					<ion-icon name="ios-clock-outline"></ion-icon>
 					<span class="text">
-						Prodej končí za <strong>{{ product.campaignEndIn.days }} dní {{ product.campaignEndIn.hours }} hodin</strong>
+						Prodej končí za <strong>{{ product.campaignEndAt | timeLeft }}</strong>
 					</span>
 				</li>
 				<li>

@@ -29,6 +29,10 @@ export class CampaignsProvider {
 			this.http.get('https://www.bonami.cz' + url, {headers: headers})
 				.subscribe(res => {
 					var newData = res.json();
+					for(var i = 0, len = newData.length; i < len; i++) {
+						newData[i].longTerm = Math.floor(((+(new Date(newData[i].endAt)) - Date.now()) / 86400000)) > 12;
+					}
+
 					if (_.isEmpty(newData)) {
 						this.next = 'END';
 						return resolve({data: this.data, next: this.next});

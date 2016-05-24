@@ -3,6 +3,19 @@
 </ion-navbar>
 
 <ion-content class="campaign-detail">
+
+	<div class="campaign-header">
+		<h1>{{ campaign.name }}</h1>
+		<p *ngIf="campaign.description" [innerHtml]="campaign.description"></p>
+		<span *ngIf="campaign.niceUrl === 'skladovky'" class="product-count">
+			<strong>{{ campaign.productCount }}</strong> nejoblíbenějších kousků skladem
+		</span>
+		<span *ngIf="!campaign.longTerm" class="time-left">
+			<ion-icon name="ios-clock-outline"></ion-icon>
+			Kampaň končí za <strong>{{ campaign.endAt | timeLeft }}</strong>
+		</span>
+	</div>
+
 	<ion-card *ngFor="#product of products">
 		<div (click)="showProduct(product)">
 			<img src="{{ product.images[0]['productDetail-thumbnail-full'] }}">
@@ -19,7 +32,7 @@
 				<p *ngIf="product.stockInfo.stockWarningText" class="product-warning">
 					{{ product.stockInfo.stockWarningText }}
 				</p>
-				<p *ngIf="!product.stockWarningText" class="retailPrice" >
+				<p *ngIf="product.priceInfo.retailPrice && product.priceInfo.price != product.priceInfo.retailPrice" class="retailPrice" >
 					{{ product.priceInfo.retailPrice | money }} Kč
 				</p>
 				<button item-right (click)="redirect(product.url)" class="button-medium">
