@@ -101,11 +101,13 @@
 
 	.propName {
 		float: left;
+		width: 45%;
 	}
 
 	.propValue {
-		float: right;
-		max-width: 50%;
+		float: left;
+		text-align: left;
+		max-width: 55%;
 		white-space: normal;
 	}
 
