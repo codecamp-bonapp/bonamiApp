@@ -1,6 +1,5 @@
 import {App, IonicApp, Platform} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
-import {ListPage} from './pages/list/list';
 import {CampaignsListPage} from './pages/campaigns-list/campaigns-list';
 
 
@@ -19,11 +18,6 @@ class MyApp {
 
 		this.initializeApp();
 
-		// used for an example of ngFor and navigation
-		this.pages = [
-			{ title: 'List', component: ListPage }
-		];
-
 		this.rootPage = CampaignsListPage;
 	}
 
@@ -38,10 +32,10 @@ class MyApp {
 		});
 	}
 
-	openPage(page) {
+	openMainPage() {
 		// Reset the content nav to have just this page
 		// we wouldn't want the back button to show in this scenario
 		let nav = this.app.getComponent('nav');
-		nav.setRoot(page.component);
+		nav.setRoot(this.rootPage);
 	}
 }
