@@ -1,6 +1,7 @@
 import {App, IonicApp, Platform} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {CampaignsListPage} from './pages/campaigns-list/campaigns-list';
+import {SettingsPage} from './pages/settings/settings';
 
 
 @App({
@@ -37,5 +38,10 @@ class MyApp {
 		// we wouldn't want the back button to show in this scenario
 		let nav = this.app.getComponent('nav');
 		nav.setRoot(this.rootPage);
+	}
+
+	openSettingsPage() {
+		let nav = this.app.getComponent('nav');
+		nav.setRoot(SettingsPage);
 	}
 }
