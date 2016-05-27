@@ -20,10 +20,10 @@
 	<ion-list>
 		<ion-item>
 			<p class="price">
-				{{ product.priceInfo.price | money }} Kč
+				{{ product.priceInfo.price | money }} {{ product.priceInfo.currency}}
 			</p>
 			<p *ngIf="product.priceInfo.retailPrice && product.priceInfo.price != product.priceInfo.retailPrice" class="retailPrice">
-				{{ product.priceInfo.retailPrice | money }} Kč
+				{{ product.priceInfo.retailPrice | money }} {{ product.priceInfo.retailPriceCurrency}}
 			</p>
 			<button item-right (click)="redirect()" class="buttonMedium">
 				Přidat do košíku
