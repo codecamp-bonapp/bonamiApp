@@ -8,11 +8,11 @@
 		<h1>{{ campaign.name }}</h1>
 		<p *ngIf="campaign.description" [innerHtml]="campaign.description"></p>
 		<span *ngIf="campaign.niceUrl === 'skladovky'" class="product-count">
-			<strong>{{ campaign.productCount }}</strong> nejoblíbenějších kousků skladem
+			<strong>{{ campaign.productCount }}</strong> {{ "favoriteProducts" | translate }}
 		</span>
 		<span *ngIf="!campaign.longTerm" class="time-left">
 			<ion-icon name="ios-clock-outline"></ion-icon>
-			Kampaň končí za <strong>{{ campaign.endAt | timeLeft }}</strong>
+			{{ "campaignEndsAt" | translate }} <strong>{{ campaign.endAt | timeLeft }}</strong>
 		</span>
 	</div>
 

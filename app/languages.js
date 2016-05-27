@@ -7,7 +7,9 @@ var languages = {
         salesEndsAt : "Prodej končí za",
         thisProductHave : "K tomuto produktu máte",
         freeShipping : "dopravu zdarma!",
-        language : "Jazyk"},
+        language : "Jazyk",
+        campaignEndsAt : "Kampaň končí za",
+        favoriteProducts : "nejoblíbenějších kousků skladem"},
     sk : {addToCart: "Pridať do košíka",
         settings : "Nastavenie",
         homepage : "Domovská stránka",
@@ -16,7 +18,9 @@ var languages = {
         salesEndsAt : "Predaj končí za",
         thisProductHave : "K tomuto produktu máte",
         freeShipping : "dopravu zadarmo!",
-        language : "Jazyk"},
+        language : "Jazyk",
+        campaignEndsAt : "Kampaň končí za",
+        favoriteProducts : "najobľúbenejších kusov skladom"},
     pl : {addToCart: "Kup teraz",
         settings : "Regulacja",
         homepage : "Dom",
@@ -25,7 +29,9 @@ var languages = {
         salesEndsAt : "Sprzedaż kończy się na",
         thisProductHave : "Produkt ten posiada",
         freeShipping : "darmowa wysyłka!",
-        language : "Język"}
+        language : "Język",
+        campaignEndsAt : "Kampania kończy się dla",
+        favoriteProducts : "najbardziej popularne pozycje w magazynie"}
 };
 
 export function getLanguages() {
