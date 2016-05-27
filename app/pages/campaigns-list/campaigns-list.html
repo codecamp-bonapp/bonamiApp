@@ -9,7 +9,7 @@
 </ion-navbar>
 
 <ion-content class="campaigns-list">
-	<ion-card *ngFor="#campaign of campaigns" (click)="showCampaign(campaign)">
+	<ion-card *ngFor="#campaign of campaigns" tappable (click)="showCampaign(campaign)">
 		<img src='{{ campaign.images["homepage-main"] }}'>
 		<ion-card-content>
 			<ion-card-title>

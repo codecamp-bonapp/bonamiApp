@@ -4,12 +4,12 @@
 
 <ion-content padding class="product-detail">
 
-	<img src="{{ product.images[0]['productDetail-thumbnail-full'] }}" (click)="showImageDetail(0)">
+	<img src="{{ product.images[0]['productDetail-thumbnail-full'] }}" tappable (click)="showImageDetail(0)">
 
 	<ion-scroll scrollX="true"  class="item imageSlider">
 		<ion-row>
 			<ion-col width-33 *ngFor="#image of product.images; #i = index" class="img-{{i}}">
-				<img src="{{ image['productDetail-thumbnail'] }}" (click)="showImageDetail(i)">
+				<img src="{{ image['productDetail-thumbnail'] }}" tappable (click)="showImageDetail(i)">
 			</ion-col>
 		</ion-row>
 	</ion-scroll>

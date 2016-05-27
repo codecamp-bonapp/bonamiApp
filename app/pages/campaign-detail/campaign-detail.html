@@ -17,7 +17,7 @@
 	</div>
 
 	<ion-card *ngFor="#product of products">
-		<div (click)="showProduct(product)">
+		<div tappable (click)="showProduct(product)">
 			<img src="{{ product.images[0]['productDetail-thumbnail-full'] }}">
 
 			<ion-card-content>
