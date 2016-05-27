@@ -30,6 +30,7 @@ export class CampaignsListPage {
 	}
 
 	doInfinite(infiniteScroll) {
+		setTimeout( () => {
 		var promise = this.CampaignsProvider.loadCampaigns();
 		promise.then((response) => {
 			this.campaigns = response.data;
@@ -39,6 +40,7 @@ export class CampaignsListPage {
 				infiniteScroll.enable(false);
 			}
 		});
+		}, 600);
 	}
 
 }

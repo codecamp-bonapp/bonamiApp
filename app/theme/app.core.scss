@@ -53,15 +53,15 @@
 ion-spinner {
 	background-image: url('../../images/loader.png');
 	background-repeat: no-repeat, no-repeat;
-	background-size: 60px 60px;
+	background-size: 49px 49px;
 	position: relative;
-	width: 60px;
-	height: 60px;
+	width: 49px;
+	height: 49px;
 	margin: 0px;
 	padding: 0px;
-	-webkit-animation: spin 1.2s linear infinite;
-	-moz-animation: spin 1.2s linear infinite;
-	animation: spin 1.2s linear infinite;
+	-webkit-animation: spin 0.8s linear infinite;
+	-moz-animation: spin 0.8s linear infinite;
+	animation: spin 0.8s linear infinite;
 }
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }

@@ -33,6 +33,7 @@ export class CampaignDetailPage {
 	}
 
 	doInfinite(infiniteScroll) {
+		setTimeout( () => {
 		var promise = this.ProductProvider.loadProducts(this.campaign.niceUrl);
 		promise.then((response) => {
 			this.products = response.data;
@@ -42,6 +43,7 @@ export class CampaignDetailPage {
 				infiniteScroll.enable(false);
 			}
 		});
+		}, 600);
 	}
 
 }
