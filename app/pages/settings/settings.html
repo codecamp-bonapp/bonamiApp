@@ -1,0 +1,16 @@
+<ion-navbar *navbar>
+	<ion-title>Settings:</ion-title>
+</ion-navbar>
+
+<ion-content padding class="settings">
+	<ion-list>
+		<ion-item>
+			<ion-label>Language:</ion-label>
+			<ion-select [(ngModel)]="language" (ngModelChange)="setLanguage($event)">
+				<ion-option value="cs">Čeština</ion-option>
+				<ion-option value="sk">Slovenčina</ion-option>
+				<ion-option value="pl">Polski</ion-option>
+			</ion-select>
+		</ion-item>
+	</ion-list>
+</ion-content>
