@@ -22,6 +22,6 @@ export class SettingsPage {
 	}
 
 	redirect() {
-		this.nav.setRoot(this.rootPage);
+		location.reload();
 	}
 }
