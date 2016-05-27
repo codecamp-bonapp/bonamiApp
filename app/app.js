@@ -2,10 +2,12 @@ import {App, IonicApp, Platform} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {CampaignsListPage} from './pages/campaigns-list/campaigns-list';
 import {SettingsPage} from './pages/settings/settings';
+import {Translate} from './pipes/translate';
 
 
 @App({
 	templateUrl: 'build/app.html',
+	pipes: [Translate],
 	config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
 class MyApp {
@@ -20,6 +22,7 @@ class MyApp {
 		this.initializeApp();
 
 		this.rootPage = CampaignsListPage;
+
 	}
 
 	initializeApp() {

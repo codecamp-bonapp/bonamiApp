@@ -1,11 +1,11 @@
 <ion-navbar *navbar>
-	<ion-title>Settings</ion-title>
+	<ion-title>{{ "settings" | translate }}</ion-title>
 </ion-navbar>
 
 <ion-content padding class="settings">
 	<ion-list>
 		<ion-item>
-			<ion-label>Language:</ion-label>
+			<ion-label>{{ "language" | translate }}</ion-label>
 			<ion-select [(ngModel)]="language" (ngModelChange)="setLanguage($event)">
 				<ion-option value="cs">Čeština</ion-option>
 				<ion-option value="sk">Slovenčina</ion-option>
@@ -13,5 +13,7 @@
 			</ion-select>
 		</ion-item>
 	</ion-list>
-	<button block secondary (click)="redirect()">Save</button>
+	<button block secondary (click)="redirect()">
+		{{ "save" | translate }}
+	</button>
 </ion-content>

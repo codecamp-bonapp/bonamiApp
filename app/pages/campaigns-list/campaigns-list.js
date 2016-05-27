@@ -2,6 +2,7 @@ import {Page, NavController, MenuController} from 'ionic-angular';
 import {CampaignsProvider} from '../../providers/campaigns-provider/campaigns-provider';
 import {ProductProvider} from '../../providers/product-provider/product-provider';
 import {CampaignDetailPage} from '../campaign-detail/campaign-detail';
+import {TimeLeft} from '../../pipes/time-left-pipe';
 
 @Page({
 	templateUrl: 'build/pages/campaigns-list/campaigns-list.html',

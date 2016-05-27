@@ -2,11 +2,12 @@ import {Page, NavController, NavParams, Modal} from 'ionic-angular';
 import {ImageDetailPage} from '../image-detail/image-detail';
 import {Money} from '../../pipes/price-pipe';
 import {TimeLeft} from '../../pipes/time-left-pipe';
+import {Translate} from '../../pipes/translate';
 
 
 @Page({
 	templateUrl: 'build/pages/product-detail/product-detail.html',
-	pipes: [Money, TimeLeft]
+	pipes: [Money, TimeLeft, Translate]
 })
 export class ProductDetailPage {
 	static get parameters() {
