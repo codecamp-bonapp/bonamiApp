@@ -6,10 +6,9 @@ import {Translate} from './pipes/translate';
 
 @App({
 	templateUrl: 'build/app.html',
+	pipes: [Translate],
 	config: {
-		backButtonText: '',
-		pipes: [Translate],
-		config: {}
+		backButtonText: ''
 	} // http://ionicframework.com/docs/v2/api/config/Config/
 })
 class MyApp {
