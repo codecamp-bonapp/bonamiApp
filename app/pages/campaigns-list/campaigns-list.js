@@ -1,4 +1,4 @@
-import {Page, NavController} from 'ionic-angular';
+import {Page, NavController, MenuController} from 'ionic-angular';
 import {CampaignsProvider} from '../../providers/campaigns-provider/campaigns-provider';
 import {ProductProvider} from '../../providers/product-provider/product-provider';
 import {CampaignDetailPage} from '../campaign-detail/campaign-detail';
@@ -9,14 +9,17 @@ import {CampaignDetailPage} from '../campaign-detail/campaign-detail';
 })
 export class CampaignsListPage {
 	static get parameters() {
-		return [[NavController], [CampaignsProvider], [ProductProvider]];
+		return [[NavController], [CampaignsProvider], [ProductProvider], [MenuController]];
 	}
 
-	constructor(nav, CampaignsProvider, ProductProvider) {
+	constructor(nav, CampaignsProvider, ProductProvider, MenuController) {
 		this.nav = nav;
 		this.CampaignsProvider = CampaignsProvider;
 		this.ProductProvider = ProductProvider;
+		this.MenuController = MenuController;
 
+		// disable menu swipe
+		this.MenuController.swipeEnable(false);
 		// get campaigns list from api
 		var promise = this.CampaignsProvider.loadCampaigns();
 		promise.then((response) => {this.campaigns = response.data});
