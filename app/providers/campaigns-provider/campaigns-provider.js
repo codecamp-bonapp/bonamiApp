@@ -24,7 +24,8 @@ export class CampaignsProvider {
 
 		return new Promise(resolve => {
 			var headers = new Headers();
-			headers.append('accept-language', 'cs'); // TODO check if phone is in sk
+			var language = localStorage.getItem('language') || 'cs';
+			headers.append('accept-language', language);
 
 			this.http.get('https://www.bonami.cz' + url, {headers: headers})
 				.subscribe(res => {

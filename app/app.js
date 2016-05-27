@@ -28,6 +28,9 @@ class MyApp {
 	}
 
 	initializeApp() {
+		var language = localStorage.getItem('language');
+		if(!language) localStorage.setItem('language', 'cs');
+
 		this.platform.ready().then(() => {
 			// Okay, so the platform is ready and our plugins are available.
 			// Here you can do any higher level native things you might need.
