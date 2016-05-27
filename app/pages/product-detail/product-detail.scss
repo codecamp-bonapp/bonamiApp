@@ -100,14 +100,18 @@
 	}
 
 	.propName {
+		display: block;
 		float: left;
 		width: 45%;
+		white-space: normal;
+
 	}
 
 	.propValue {
-		float: left;
+		display: block;
+		float: right;
 		text-align: left;
-		max-width: 55%;
+		width: 54%;
 		white-space: normal;
 	}
 

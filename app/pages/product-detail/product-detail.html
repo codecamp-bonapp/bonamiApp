@@ -15,7 +15,7 @@
 	</ion-scroll>
 
 	<h1>{{ product.name }}</h1>
-	<h2>od <span>{{ product.brandName }}</span></h2>
+	<h2>{{"from" | translate }} <span>{{ product.brandName }}</span></h2>
 
 	<ion-list>
 		<ion-item>
@@ -26,7 +26,7 @@
 				{{ product.priceInfo.retailPrice | money }} {{ product.priceInfo.retailPriceCurrency}}
 			</p>
 			<button item-right (click)="redirect()" class="buttonMedium">
-				Přidat do košíku
+				{{ "addToCart" | translate }}
 			</button>
 		</ion-item>
 		<ion-item>
@@ -34,7 +34,7 @@
 				<li *ngIf="!product.longTermCampaign">
 					<ion-icon name="ios-clock-outline"></ion-icon>
 					<span class="text">
-						Prodej končí za <strong>{{ product.campaignEndAt | timeLeft }}</strong>
+						{{ "salesEndsAt" | translate }} <strong>{{ product.campaignEndAt | timeLeft }}</strong>
 					</span>
 				</li>
 				<li>
@@ -47,7 +47,7 @@
 				</li>
 				<li *ngIf="product.priceInfo.shippingPrice == null" class="stock-success">
 					<ion-icon name="ios-checkmark-circle-outline"></ion-icon>
-					<span class="text">K tomuto produktu máte <strong>dopravu zdarma!</strong></span>
+					<span class="text">{{"thisProductHave" | translate }} <strong> {{"freeShipping" | translate }}</strong></span>
 				</li>
 			</ul>
 		</ion-item>
@@ -56,15 +56,13 @@
 	<p class="product-detail-description">{{ product.description }}</p>
 
 	<ion-list>
-		<ion-item *ngFor="#item of product.properties">
-			<div class="prop">
-				<span class="propName">
-					{{item.name}}
-				</span>
-				<span class="propValue">
-					{{item.value}}
-				</span>
-			</div>
+		<ion-item *ngFor="#item of product.properties" class="prop">
+			<span class="propName">
+				{{item.name}}
+			</span>
+			<span class="propValue">
+				{{item.value}}
+			</span>
 		</ion-item>
 	</ion-list>
 </ion-content>

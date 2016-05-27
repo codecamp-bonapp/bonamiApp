@@ -1,11 +1,12 @@
 import {Page, NavController, NavParams} from 'ionic-angular';
 import {ProductDetailPage} from '../product-detail/product-detail';
 import {Money} from '../../pipes/price-pipe';
+import {Translate} from '../../pipes/translate';
 import {TimeLeft} from '../../pipes/time-left-pipe';
 
 @Page({
 	templateUrl: 'build/pages/campaign-detail/campaign-detail.html',
-	pipes: [Money, TimeLeft]
+	pipes: [Money, TimeLeft, Translate]
 })
 export class CampaignDetailPage {
 	static get parameters() {
