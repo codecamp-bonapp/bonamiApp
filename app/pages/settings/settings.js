@@ -1,6 +1,7 @@
 import {Page, NavController} from 'ionic-angular';
 import {CampaignsListPage} from '../campaigns-list/campaigns-list';
 import {Translate} from '../../pipes/translate';
+import {AppConfig} from '../../config/config.js'
 
 @Page({
 	templateUrl: 'build/pages/settings/settings.html',
@@ -15,6 +16,7 @@ export class SettingsPage {
 		this.nav = nav;
 		this.language = localStorage.getItem('language') || 'cs';
 		this.rootPage = CampaignsListPage;
+		this.appConfig = appConfig.appConfig;
 	}
 
 	setLanguage(language) {

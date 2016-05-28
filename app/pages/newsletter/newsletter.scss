@@ -1,0 +1,267 @@
+.newsletter {
+  #onStockSlides{
+    -webkit-mask-image: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,
+                                  rgba(255,255,255,0) 5%,
+                                  rgba(255,255,255,1) 25%,
+                                  rgba(255,255,255,1) 75%,
+                                  rgba(255,255,255,0) 95%,
+                                  rgba(255,255,255,0) 100%);
+    margin-top: 7px;
+  }
+  .menu{
+    height: 70px;
+
+    .menuBottom{
+      height: 3px;
+      width: 1000%;
+      background: rgb(233, 237, 232);
+      bottom: 0px;
+      position: absolute;
+      left: -120px;
+    }
+    .swiper-slide{
+      font-size: 13px;
+    }
+  }
+
+  h1{
+    font-size: 21px;
+  }
+
+  h2{
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+
+  h2.author{
+    font-style: italic;
+    font-size: 13px;
+    color: gray;
+  }
+  p.author{
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 7px;
+  }
+  ion-row.items, ion-row.author{
+    margin-bottom: 10px;
+    margin-top: 16px;
+
+    ion-col{
+      margin: auto;
+      display: block;
+    }
+  }
+  ion-row.author{
+    margin-top: 10px;
+
+  }
+  .thumbnail{
+    border-radius: 4px;
+  }
+  hr.text{
+    border: 0;
+    height: 1px;
+    width: 98%;
+    text-align: center;
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    margin-top: 12px;
+  }
+  hr.text:after{
+    content: attr(text);
+    background: white;
+    display: inline-block;
+    position: relative;
+    bottom: 10px;
+    padding: 0 10px;
+    color: #8c8b8b;
+    font-size: 11px;
+  }
+}
+.foreword{
+  margin-left: 20px;
+  margin-right: 25px;
+  padding: 10px;
+  text-align: justify;
+  line-height: 18px;
+
+  p{
+    color: #404040;
+  }
+}
+.iconLink{
+  position: absolute;
+  top: 25%;
+  right: 5px;
+  font-size: 25px;
+}
+.linethrough{
+  text-decoration: line-through;
+  font-size: larger;
+}
+.price{
+  color: black;
+  line-height: 1.5;
+  font-weight: bold;
+  font-size: larger;
+}
+p{
+  line-height: 1.3;
+}
+.lovedProduct{
+  background-image: url("../../img/srdcovka.png");
+  background-repeat: no-repeat;
+  background-size: 55%;
+  height: 84px;
+  background-position-x: 50%;
+  background-position-y: 56%;
+  margin-top: 10px;
+  border-bottom: 1px #E6E6E6;
+  border-bottom-style: solid;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.magazineArticle{
+  position: relative;
+  h2{
+    font-size: 16px;
+    color: #252525;
+  }
+}
+.magazineHeader{
+  background-image: url("../../img/magazin.png");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 71px;
+  position: absolute;
+  bottom: 20%;
+  background-color: white;
+  opacity: 0.9;
+  background-position-x: 50%;
+  background-position-y: 20%;
+}
+.onStock{
+  background-image: url("../../img/skladovky.png");
+  background-repeat: no-repeat;
+  background-size: 55%;
+  height: 84px;
+  background-position-x: 50%;
+  margin-top: 21px;
+  border-bottom: 1px #E6E6E6;
+  border-bottom-style: solid;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.onStockFooter{
+  height: 70px;
+  border-top: 1px #E6E6E6;
+  border-top-style: solid;
+  text-align: center;
+  color: #252525;
+}
+.onStockIconLink{
+  position: relative;
+  right: -15px;
+}
+.ending{
+  background: #ED4949;
+  color: white;
+  // min-height: 120px;
+  h2{
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  p{
+    color:white;
+  }
+  ion-icon{
+    color: #860909;
+    font-size: 30px;
+    vertical-align: middle;
+    margin-right: 7px;
+  }
+  .countdown{
+    color: #860909;
+    font-size: 12px;
+  }
+  ion-col{
+    margin-left: 7px;
+    margin-right: 7px;
+    padding-bottom: 10px;
+  }
+}
+.bonamiLogo{
+  background-image: url("../../img/bonami-logo.svg");
+  background-repeat: no-repeat;
+  background-size: 95px;
+  background-position-x: 50%;
+  background-position-y: 4px;
+  height: 30px;
+  width: 195px;
+}
+// .bonamiSideMenu{
+//   background-image: url("../../img/bonami-logo.svg");
+//   background-repeat: no-repeat;
+// }
+.campaigns{
+  background: #F7F7F7;
+  padding-top: 1px;
+}
+.line1{
+  position: relative;
+  top: 0px;
+  color: #999999;
+}
+.line2{
+  position: absolute;
+  color: #2bbd56;
+  top: 0px;
+  left: 0px;
+}
+.test{
+  display: inline-block;
+  margin: 15px;
+  margin-right: 60px;
+}
+.hl {
+  height: 3px;
+  width: 100px;
+  background: #32db64;
+  position: absolute;
+  bottom: 0px;
+  left: 0px; }
+  .hl.animated, .line1, .line2 {
+    -moz-transition: all 0.15s;
+    /* FF3.6+ */
+    -webkit-transition: all 0.15s;
+    /* Chrome, Safari */
+    -o-transition: all 0.15s;
+    /* Opera */
+    -ms-transition: all 0.15s;
+    /* IE 9 */
+    transition: all 0.15s; }
+  //
+  // .line1{
+  //   position: relative;
+  //   top: 0px;
+  //   color: #999999;
+  //   text-align: left;
+  // }
+  // .line2{
+  //   position: relative;
+  //   top: 0px;
+  //   text-align: left;
+  // }
+ion-avatar img{
+  max-width: 80px;
+  max-height: 80px;
+  border-radius: 45px;
+  border-style: solid;
+  border: 2px whitesmoke;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
