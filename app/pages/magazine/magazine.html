@@ -1,0 +1,66 @@
+<ion-navbar *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title><div class="bonamiLogo"></div></ion-title>
+  <ion-buttons end>
+    <!-- <button (click)="getOfflineArticles()"> -->
+    <button (click)="toggleOfflineArticles()">
+      <ion-icon name="star-outline" *ngIf="!offlineArticlesDisplayed()"></ion-icon>
+      <ion-icon name="star" *ngIf="offlineArticlesDisplayed()"></ion-icon>
+    </button>
+    <button (click)="toggleElem('tags')">
+      <ion-icon name="ios-pricetags-outline" *ngIf="!navBarIconsActive.tags"></ion-icon>
+      <ion-icon name="ios-pricetags" *ngIf="navBarIconsActive.tags"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-navbar>
+<ion-content  class="magazine">
+  <!-- <a>Save article with ID > 1500</a> -->
+  <div class="mgzHeader">
+      <ion-searchbar #search id="search"
+      [(ngModel)]="searchQuery"
+      (input)="searchArticles($event)"
+      (cancel)="onCancelSearchBar($event)"
+      (clear)="onClearSearchBar($event)"></ion-searchbar>
+    <ion-row>
+      <ion-col>
+        <div id="selectedTags">
+          <button small secondary *ngFor="#selectedTag of selectedTags" (click)="removeTag(selectedTag)">
+            {{ selectedTag }} <ion-icon right name="close"></ion-icon>
+          </button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div id="tags" class="slideup">
+          <button small *ngFor="#tag of data.tags" (click)="getTagsArticle(tag)">{{ tag }}</button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+  <!-- <a *ngFor="#article of data.articles" (click)="deleteArticle(article)">Del article {{ article.id }}; </a> -->
+  <div class="mgzWrapper">
+    <ion-row wrap style="background: #E7E7E7">
+      <ion-col *ngFor="#article of data.articles; #i = index">
+        <ion-card *ngIf="article">
+          <img [src]= "article.image || sampleImg" (click)="viewArticle(article)">
+          <ion-card-content>
+            <ion-card-title>
+              <h3 (click)="viewArticle(article)">{{ article.title }}</h3>
+            </ion-card-title>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <!-- <ion-card *ngFor="#article of data.articles">
+    <img [src]="article.image || sampleImg" (click)="viewArticle(article)">
+    <div class="card-title">
+       <h1 (click)="viewArticle(article)">{{ article.title }}</h1>
+    </div>
+  </ion-card> -->
+
+</ion-content>

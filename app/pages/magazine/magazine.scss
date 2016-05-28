@@ -1,0 +1,49 @@
+.magazine {
+  ion-card{
+    border-radius: 5px;
+    margin: 5px auto;
+    width: 170px;
+    min-height: 248px;
+  }
+  ion-card ion-card-content{
+    padding: 0px 10px 10px 10px;
+  }
+  ion-col{
+    padding: 3px 5px 0px 5px;
+  }
+  h3{
+    font-size: 13px;
+    font-weight: bold;
+  }
+  .mgzWrapper{
+    background: #F8F8F8;
+    height: 100%
+  }
+  .mgzHeader{
+    background: #F8F8F8;
+  }
+}
+#tags{
+  // position: absolute;
+  // opacity: 0.8 ;
+  // background-color: whitesmoke;
+  z-index: 10;
+  // margin-right: 10px;
+  padding: 3px;
+}
+#selectedTags ion-icon{
+  font-size: 2.0em;
+}
+.slideup, .slidedown {
+  max-height: 0;
+  overflow-y: hidden;
+  -webkit-transition: max-height 0.5s ease-in-out;
+  -moz-transition: max-height 0.5s ease-in-out;
+  -o-transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
+  background: #F8F8F8;
+}
+.slidedown {
+  // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  max-height:350px ;
+}

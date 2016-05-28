@@ -1,0 +1,196 @@
+
+<ion-navbar *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title><div class="bonamiLogo"></div></ion-title>
+</ion-navbar>
+
+<ion-content class="newsletter" overflow-scroll="false">
+  <!-- <ion-refresher (refresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher> -->
+  <div class="menu">
+    <ion-slides #menuSlider [options]="menuOptions">
+      <ion-slide *ngFor="#newsletter of nls.data" (click)="displayNewsletter($event, newsletter.id)">
+        <div class="line1" [attr.id]="'date_'+newsletter.id">
+          {{ dayNameDate(newsletter.publishedAt) }}
+        </div>
+      </ion-slide>
+      <div class="menuBottom"></div>
+      <div class="hl animated" id="underline"></div>
+    </ion-slides>
+    <!-- <ion-scroll scrollX="true" style="height: 62px">
+      <div style="white-space: nowrap; font-size: 13px">
+        <div class="test" *ngFor="#newsletter of nls.data" (click)="displayNewsletter($event, newsletter.id)">
+          <div class="line1" [attr.id]="'date_'+newsletter.id" (click)="toggleTitle(newsletter.id)">
+            {{ dayNameDate(newsletter.publishedAt) }} {{ newsletter.id }}
+          </div>
+        </div>
+      </div>
+    </ion-scroll> -->
+  </div>
+  <!-- <a (click)="removeTimeStamp('lastNlUpdateCheck')">Remove lastNlUpdateCheck item.</a><br> -->
+  <!-- <a *ngFor="#nl of nls.data" (click)="delNewsletter(nl.id)">del_{{ nl.id }} </a> -->
+  <div class="foreword" *ngIf="data" >
+    <h1>{{ data.perexTitle }}</h1>
+    <p style="font: 13px/1.5 'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif;"> {{ data.perexBody }}</p>
+    <!-- <h3><a nav-transition="android" (click)="magazinePage()">Transition test</a></h3> -->
+    <p>{{ data.perex }}</p>
+  </div>
+
+<div class="campaigns">
+  <ion-card *ngFor="#campaign of data.newCampaigns">
+    <a [href]="campaign.campaign.url" target="_blank"><img [src]="campaign.campaign.images['homepage-main'] || sampleImg"></a>
+    <ion-item>
+      <h2>{{ campaign.campaign.name }}</h2>
+      <p style="white-space: initial; ">
+        <a [href]="campaign.campaign.url" target="_blank">
+          <ion-icon secondary name="ios-arrow-forward" item-right class="iconLink"></ion-icon>
+        </a>
+        {{ campaign.campaign.perex }}
+      </p>
+      <p> </p>
+    </ion-item>
+
+    <hr text="Doporučujeme" class="text" *ngIf="campaign.type == 'big-product-single'">
+    <ion-row class="items" *ngIf="campaign.type == 'big-product-single'">
+      <ion-col width-33 style="margin-left: 10px; margin-right: 10px">
+        <a [href]="campaign.products[0].url" target="_blank">
+          <img class="thumbnail" [src]="campaign.products[0].images[0]['productDetail-thumbnail']  || sampleImg">
+        </a>
+      </ion-col>
+      <ion-col>
+        <h2 class="author">{{ campaign.products[0].name }}</h2>
+        <p class="author">
+          <!-- {{ campaign.products[0].description }}<br /> -->
+          {{ campaign.products[0].priceInfo.price }}
+          {{ campaign.products[0].priceInfo.currency }}
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <hr text="Nejoblíbenejší kousky" class="text" *ngIf="campaign.type == 'big-product-multiple'">
+    <ion-row class="items" *ngIf="campaign.type == 'big-product-multiple'">
+      <ion-col *ngFor="#product of campaign.products">
+      <a [href]="product.url" target="_blank">
+        <img [src]="product.images[0]['productDetail-thumbnail']  || sampleImg">
+      </a>
+      </ion-col>
+    </ion-row>
+
+
+    <hr text="Doporučujeme" class="text" *ngIf="campaign.type == 'big-author'">
+    <ion-row class="author" *ngIf="campaign.type == 'big-author'">
+      <ion-col width-33>
+        <ion-avatar><img [src]="campaign.campaign.images.author || sampleImg"></ion-avatar>
+      </ion-col>
+      <ion-col>
+        <h2 class="author">{{ campaign.campaign.authorDescription }}</h2>
+        <p class="author">{{ campaign.campaign.authorTitle }}</p>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card *ngIf="data.onStockProducts">
+    <div class="onStock">
+    </div>
+    <!-- <a (click)="getSlider()">getSlider()</a> -->
+    <ion-slides id="onStockSlides" #onStockSlider [options]="onStockSliderOptions">
+      <ion-slide *ngFor="#stockItem of data.onStockProducts.products">
+        <a [href]="stockItem.url" target="_blank">
+          <img [src]="stockItem.images[0]['productDetail-thumbnail'] || sampleImg" style="width: auto;"><br>
+        </a>
+        <p> {{ stockItem.name }} </p>
+        <p> {{ stockItem.priceInfo.price }} {{ stockItem.priceInfo.currency }} </p>
+      </ion-slide>
+    </ion-slides>
+    <ion-item class="onStockFooter">
+      <ion-row center>
+        <ion-col>
+          <h2> Na tyto kousky čekat nemusíte! </h2>
+        </ion-col>
+        <ion-col style="text-align: right">
+          <a href="https://www.bonami.cz/skladovky" target="_blank">
+            <ion-icon secondary name="ios-arrow-forward" item-right class="onStockIconLink"></ion-icon>
+          </a>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <!-- <ion-row>
+      <ion-col><h2> Na tyto kousky cekat nemusite! </h2></ion-col>
+      <ion-col><ion-icon secondary name="ios-arrow-forward" item-right></ion-icon></ion-col>
+    </ion-row> -->
+  </ion-card>
+
+  <ion-card *ngIf="data.magazineArticle" class="magazineArticle">
+    <img [src]="data.magazineArticle.image || sampleImg" (click)="viewArticle(data.magazineArticle.id)">
+    <div class="magazineHeader"></div>
+    <ion-card-content>
+      <h2 (click)="viewArticle(data.magazineArticle.id)">{{ data.magazineArticle.title }}</h2>
+    </ion-card-content>
+  </ion-card>
+
+
+  <!-- <ion-row class="items" *ngIf="campaign.type == 'big-product-single'">
+    <ion-col width-33 style="margin-left: 10px; margin-right: 10px">
+      <img class="thumbnail" [src]="campaign.products[0].images[0]['productDetail-thumbnail']  || sampleImg">
+    </ion-col>
+    <ion-col>
+      <h2 class="author">{{ campaign.products[0].name }}</h2>
+      <p class="author">
+        {{ campaign.products[0].priceInfo.price }}
+        {{ campaign.products[0].priceInfo.currency }}
+      </p>
+    </ion-col>
+  </ion-row> -->
+
+  <ion-card *ngIf="data.lovedProduct">
+    <div class="lovedProduct">
+    </div>
+    <ion-row class="items">
+      <ion-col width-33 style="margin-left: 10px; margin-right: 10px">
+        <img class="thumbnail" [src]="data.lovedProduct.images[0]['productDetail-thumbnail'] || sampleImg">
+      </ion-col>
+      <ion-col>
+          <h2 style="font: 19px/1 'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">{{ data.lovedProduct.name }}</h2><br>
+          <p>{{ data.lovedProduct.description.substring(0, data.lovedProduct.description.indexOf('.')) }}.</p>
+          <br><br>
+          <p class="linethrough">
+            {{ data.lovedProduct.priceInfo.retailPrice }} {{ data.lovedProduct.priceInfo.retailPriceCurrency }}</p>
+          <p class="price">
+            {{ data.lovedProduct.priceInfo.price }} {{ data.lovedProduct.priceInfo.currency }}
+          </p>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <div *ngIf="data.endingCampaigns">
+    <ion-card *ngFor="#campaign of data.endingCampaigns">
+      <img [src]="campaign.images['homepage-main'] || sampleImg">
+      <div class="ending">
+        <ion-row>
+          <ion-col>
+            <h2 style="color: white;">{{ campaign.name }}</h2>
+            <p>{{ campaign.perex }}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="countdown">
+            <ion-icon name="time" isActive="false"></ion-icon>
+            <span *ngIf="!campaignEnded(campaign.endAt)">
+              Končí za {{ calculateTimeRemaining(campaign.endAt).days }} dní
+              {{ calculateTimeRemaining(campaign.endAt).hours }} hodin.
+            </span>
+            <span *ngIf="campaignEnded(campaign.endAt)">
+              Kampaň již <strong>skončila</strong>.
+            </span>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-card>
+  </div>
+
+</div>
+
+</ion-content>
