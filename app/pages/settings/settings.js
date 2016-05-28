@@ -9,10 +9,10 @@ import {AppConfig} from '../../config/config.js'
 })
 export class SettingsPage {
 	static get parameters() {
-		return [[NavController]];
+		return [[NavController], [AppConfig]];
 	}
 
-	constructor(nav) {
+	constructor(nav, appConfig) {
 		this.nav = nav;
 		this.language = localStorage.getItem('language') || 'cs';
 		this.rootPage = CampaignsListPage;
