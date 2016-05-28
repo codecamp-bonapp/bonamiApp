@@ -67,7 +67,7 @@ export class MagazinePage {
   }
 
   showLoadingScreen(){
-    var loading = Loading.create();
+    var loading = Loading.create({spinner:"bonami-loader"});
 
     this.nav.present(loading);
 
